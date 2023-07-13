@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+    <style>
+        body {
+            background-color: #e1f1ff;
+            font-family: Arial, sans-serif;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        form {
+            width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        input[type="submit"]{
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h2>Edit User</h2>
+    <form method="POST" action="/edit/{{ user.id }}">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ user.name }}" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ user.email }}" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" value="{{ user.phone }}" required><br><br>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" value="{{ user.address }}" required><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" name="city" value="{{ user.city }}" required><br><br>
+
+        <label for="country">Country:</label>
+        <input type="text" name="country" value="{{ user.country }}" required><br><br>
+
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
